@@ -1,8 +1,23 @@
+/* types need to be declared for the entire project */
+"use strict";
+
+/* factory function for players (there) will be multiple of one*/
+const player = ((symbol) => {
+
+    this.symbol = symbol;
+
+    const getSymbol = () =>{
+        return symbol;
+    };
+
+    return {getSymbol}
+});
+
 
 /* Modal pattern for our game board, only need one object for this app */
 const gameBoard = (() => {
 
-    const board = ["", "", "","", "", "","", "", ""];
+    const board = ["1", "2", "3", "4", "5", "6", "7", "8", "9"];
 
     const setField = ((index, sign) => {
         if(index > board.length) return;
@@ -15,35 +30,49 @@ const gameBoard = (() => {
     });
 
     const resetGame = (() => {
-        for(let i = 0; i < board.length; i++){
-            board[i] = "";
+        for(let i = 0; i < board.length - 1; i++){
+            board[i] = i.toString();
         }
     });
 
-    return {setField, getField, resetGame};
+    /* used for test purposes*/
+    const printBoard = (() =>{
+        for(let i = 0; i < board.length - 1; i++){
+            console.log(board[i]);   
+        }
+    });
+
+    return {setField, getField, resetGame, printBoard};
 
 })();
 
 
+const gameController = (() => {
 
-/* messing with closure */
-function human(n){
-    const name = n;
-    function sayHi(){
-        console.log(`Hi i am ${name}`);
-    }
-    function sayHowYouFeel(){
-        console.log(`${name} is feeling good!`);
-    }
-    return{
-        sayHi,
-        sayHowYouFeel
-    }
-};
+    const playerOne = player("X");
+    const playerTwo = player("O");
+    
+    const gameOver = false;
+    let round = 1;
 
-const joe = human("josiah");
-const chase = human("chase")
+    const playRound = ((fieldIndex) => {  
+        gameBoard.setField(fieldIndex, getPlayerSymbol());
+        round++;
+    });
 
-chase.sayHowYouFeel();
+    const getPlayerSymbol = () => {
+        if(round % 2 == 1){
+            return playerOne.getSymbol();
+        }
+        return playerTwo.getSymbol();
+    }
+
+    return {playRound}
+    
+})();
+
+
+
+
 
 
