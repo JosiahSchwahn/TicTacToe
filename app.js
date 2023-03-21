@@ -1,6 +1,8 @@
 /* types need to be declared for the entire project */
 "use strict";
 
+
+
 /* factory function for players (there) will be multiple of one*/
 const player = ((symbol, name) => {
 
@@ -25,19 +27,20 @@ const gameBoard = (() => {
 
     const setField = ((index, sign) => {
         if(index > board.length - 1) {
-            return "Index is out of range on Board, cannot setField";
+            console.log(`Index is out of range`);
         }
         board[index] = sign;
     });
 
     const getField = ((index) => {
         if(index > board.length - 1) {  
-            return "Index is out of range on Board, cannot getField()";
+                console.log(`Index is out of Range`);
+                
         }
         return board[index];
     });
 
-    const resetGame = () => {
+    const resetBoard = () => {
         for(let i = 0; i < board.length - 1; i++){
             board[i] = i.toString();
         }
@@ -50,37 +53,38 @@ const gameBoard = (() => {
         }
     };
 
-    return {setField, getField, resetGame, printBoard};
+    return {setField, getField, printBoard, resetBoard};
 
 })();
 
 
 const gameController = (() => {
 
-    const playerOne = player("XXX", "Josiah");
-    const playerTwo = player("OOO", "Chase");
+    const playerOne = player("X", "Josiah");
+    const playerTwo = player("O", "Chase");
     let gameOver = false;
     let round = 1;
 
     const playRound = (fieldIndex) => {    
-        if(round <= 9){  
-            if(fieldIndex >= 0 && fieldIndex <= 8){        
-                if(gameBoard.getField(fieldIndex) == playerOne.getSymbol() || gameBoard.getField(fieldIndex) == playerTwo.getSymbol()){
-                    return "That spot is filled";
-                }        
-                    
-                gameBoard.setField(fieldIndex, getPlayerSymbol()); 
-                gameBoard.printBoard();
-                round++;
-                return `ran a round`;   
-                    
-                           
-            }
-            return `Index is out of range of board, use an index 0 through 8`;   
-
-        } else {
-            return `Draw`;
-        }  
+        //checks if there is a winning combination
+        if(!checkIfWinner()){
+            if(round <= 9){  
+                if(fieldIndex >= 0 && fieldIndex <= 8){  
+                    if(gameBoard.getField(fieldIndex) == playerOne.getSymbol() || gameBoard.getField(fieldIndex) == playerTwo.getSymbol()){
+                        return "That spot is filled";
+                    }
+                    gameBoard.setField(fieldIndex, getPlayerSymbol()); 
+                    gameBoard.printBoard();
+                    round++;
+                    checkIfWinner();
+                    return;     
+                }                                
+                return `Index is out of range of board, use an index 0 through 8`;  
+            } else {
+                return `Draw`;
+            } 
+        } 
+         
     };
 
     const checkIfWinner = () =>{
@@ -99,9 +103,11 @@ const gameController = (() => {
         for(let i = 0; i < winningIndexes.length; i++){ 
             if((gameBoard.getField(winningIndexes[i][0]) == gameBoard.getField(winningIndexes[i][1])) &&
             (gameBoard.getField(winningIndexes[i][0]) == gameBoard.getField(winningIndexes[i][2]))){
+                    console.log(`We have a winner, the game is over`);        
                     return true;     
             }       
         }
+        return false;
     };
 
     const getPlayerSymbol = () => {
@@ -109,25 +115,35 @@ const gameController = (() => {
             return playerOne.getSymbol();
         }
         return playerTwo.getSymbol();
-    }
+    };
 
     const getRound = ( () =>{
         return round;
-    })
+    });
 
-    return {playRound, getRound, checkIfWinner}
+    const resetGame = () => {
+        gameBoard.resetBoard();
+        round = 1;
+    }
+
+    return {playRound, getRound, checkIfWinner, resetGame}
     
 })();
 
+const gameDisplay = (() =>{
 
+    const fieldElements = document.querySelectorAll(".field")
 
-
-
-const module = (() =>{
-    let x = 1;
-    const iterate = () =>{
-        x++;
-        console.log(x);
-    }
-    return {iterate,x}
+    fieldElements.forEach((e, index, array) => {
+        e.addEventListener("click", () =>{
+            console.log(index);
+            console.log(array);
+                     
+            console.log(`Hello world`);        
+        });
+    
+    });
 })();
+
+
+
