@@ -1,12 +1,21 @@
 :root{
+    --page-size: 100vh;
     --headerSizeHeight: 5vh;
     --footerSizeHeight: 5vh;
-    --boardSize: calc(100vh - (calc(var(--headerSizeHeight) + var(--footerSizeHeight))));
+    --boardSize: calc(var(--page-size) - (calc(var(--headerSizeHeight) + var(--footerSizeHeight))));
+
     font-family: 'Montserrat';
     font-weight: 600;
     font-size: clamp(.2rem, 1.5rem, 2rem);
     overflow: hidden;
+    /*colors*/
+    --main-gray: rgb(38,38,38);
+    --main-gradient: radial-gradient(circle, rgba(38,38,38,1) 0%, rgba(45,45,45,1) 100%);
+    
+    
 }
+
+
 
 a:link, a:visited {
     color: rgba(255, 255, 255, 0.916);
@@ -20,20 +29,33 @@ a:link, a:visited {
 
 
 body{
-    background-color: rgb(58, 58, 58);
+    background: var(--main-gray);
+    background: var(--main-gradient);
     margin: 0px;
 }
 
+
 button{
-    background: none;
-	color: inherit;
-	border: none;
-	padding: 0;
-	font: inherit;
-	cursor: pointer;
-	outline: inherit;
+    color: inherit;
+    border: none;
+    font: inherit;
+    cursor: pointer;
+
 }
 
+button.github-btn{ 
+    background: none;
+	padding: 0;
+
+}
+
+button.reset-btn, .play-again-btn{
+    background: white;
+    border-radius: 5px;
+    color: var(--main-gray);
+    font-size: 18px;
+    padding: 12px 18px;
+}
 
 svg{
     display: flex;
@@ -42,7 +64,9 @@ svg{
 }
 
 .page-container{
-    padding: 15px;
+    height: var(--page-size);
+    padding: 20px;
+    
 }
 
 #header{
@@ -53,13 +77,24 @@ svg{
     align-items: center;
 }
 
+.score-container{
+
+    display: flex;
+    justify-content: space-evenly;
+    gap: 300px;
+    color: white;
+    font-size: 28px;
+
+
+}
 
 .board-container{
     display: flex;
     justify-content: center;
     align-items: center;
-    height: var(--boardSize)
-
+    flex-direction: column;
+    height: var(--boardSize);
+    gap: 100px;
 }
 .board{
     display: grid;
@@ -71,6 +106,13 @@ svg{
 }
 
 .field{
+    /* centers items inside of gameBoard */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: rgb(255, 255, 255);
+    font-size: 48px;
     border: 1px solid rgb(255, 255, 255);
     width: 150px;
     height: 150px;
@@ -93,3 +135,33 @@ svg{
     opacity: 80%;
 }
 
+/* Modal Stlying*/
+
+
+.modal-card{
+
+    backdrop-filter: blur(10px) saturate(186%);
+    -webkit-backdrop-filter: blur(10px) saturate(186%);
+    background-color: rgba(40, 40, 40, 0.28);
+    border-radius: 12px;
+    
+    color: white;
+
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+
+    
+}
+
+.hidden{
+    display: none;
+}
