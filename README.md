@@ -20,7 +20,6 @@
       <a href="#getting-started">Getting Started</a>
     </li>
     <li><a href="#roadmap">Roadmap</a></li>
-    <li><a href="#contributing">Contributing</a></li>
     <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
     <li><a href="#acknowledgments">Acknowledgments</a></li>
@@ -46,7 +45,7 @@
 <!-- GETTING STARTED -->
 ## Getting Started
 
-No Prerequisites or installations required, no NPM packages were used.
+No Prerequisites or installations required. No NPM packages were used.
 Hosted on github pages.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -67,7 +66,7 @@ Hosted on github pages.
 <!-- LICENSE -->
 ## License
 
-Distributed under the MIT License. See `LICENSE` for more information.
+Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -75,8 +74,9 @@ Distributed under the MIT License. See `LICENSE` for more information.
 <!-- CONTACT -->
 ## Contact
 
-Josiah Schwahn - [LinkedIn][license-url] - schwahn.josiah@gmail.com
-Website - [Personal Website](https://www.josiahschwahn.com/)
+Josiah Schwahn LinkedIn - [LinkedIn][license-url] 
+Email - schwahn.josiah@gmail.com
+Personal website - [Personal Website](https://www.josiahschwahn.com/)
 
 Project Link: [https://github.com/JosiahSchwahn/TicTacToe#readme-top](https://github.com/JosiahSchwahn/TicTacToe#readme-top)
 
@@ -86,10 +86,8 @@ Project Link: [https://github.com/JosiahSchwahn/TicTacToe#readme-top](https://gi
 ## Acknowledgments
 
 * [The Odin Project <3](https://www.theodinproject.com/dashboard)
-* [CSS Diner](https://flukeout.github.io/#)
+* [MDN](https://developer.mozilla.org/en-US/)
 * [Glass UI](https://ui.glass/generator/)
-* [Super Useful CSS Resources](https://dev.to/lissy93/super-useful-css-resources-1ba3)
-
 
 [product-screenshot#1]: images/game.PNG
 [product-screenshot#2]: images/Xwon.PNG
