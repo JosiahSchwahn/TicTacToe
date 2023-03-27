@@ -3,6 +3,7 @@
 
 
 <h3 align="center">TicTacToe</h3>
+
 [![LinkedIn][linkedin-shield]][linkedin-url]
 
 <!-- TABLE OF CONTENTS -->
@@ -35,6 +36,7 @@
 ## About The Project
 
 [![Product Name Screen Shot][product-screenshot#1]]
+
 [![Product Name Screen Shot][product-screenshot#2]]
 
 
