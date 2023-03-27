@@ -18,12 +18,7 @@
     </li>
     <li>
       <a href="#getting-started">Getting Started</a>
-      <ul>
-        <li><a href="#prerequisites">Prerequisites</a></li>
-        <li><a href="#installation">Installation</a></li>
-      </ul>
     </li>
-    <li><a href="#usage">Usage</a></li>
     <li><a href="#roadmap">Roadmap</a></li>
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#license">License</a></li>
@@ -36,29 +31,64 @@
 ## About The Project
 
 ![Game Board][product-screenshot#1]
-
 ![Winner][product-screenshot#2]
-
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ### Built With
 
-This section should list any major frameworks/libraries used to bootstrap your project. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
+![JavaScript][javascript]
+![HTML5][html5]
+![CSS3][css3]
 
-* ![JavaScript][javascript]
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-* ![HTML5][html5]
+<!-- GETTING STARTED -->
+## Getting Started
 
-* ![CSS3][css3]
+No Prerequisites or installations required, no NPM packages were used.
+Hosted on github pages.
 
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- ROADMAP -->
+## Roadmap
+
+- [x] Fail at writing decoupled code ~ game logic and UI tied together
+[Building a House from the inside out](https://www.ayweb.dev/blog/building-a-house-from-the-inside-out)
+- [x] Use JS Module Pattern and Factory Functions
+- [x] Understand Closure...
+- [x] Page structure, style, and add a displayControllerUI to display states
+- [x] README.md
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
+<!-- LICENSE -->
+## License
+
+Distributed under the MIT License. See `LICENSE` for more information.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
+<!-- CONTACT -->
+## Contact
 
+Josiah Schwahn - [LinkedIn][license-url] - schwahn.josiah@gmail.com
+Website - [Personal Website](https://www.josiahschwahn.com/)
+
+Project Link: [https://github.com/JosiahSchwahn/TicTacToe#readme-top](https://github.com/JosiahSchwahn/TicTacToe#readme-top)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- ACKNOWLEDGMENTS -->
+## Acknowledgments
+
+* [The Odin Project <3](https://www.theodinproject.com/dashboard)
+* [CSS Diner](https://flukeout.github.io/#)
+* [Glass UI](https://ui.glass/generator/)
+* [Super Useful CSS Resources](https://dev.to/lissy93/super-useful-css-resources-1ba3)
 
 
 [product-screenshot#1]: images/game.PNG
