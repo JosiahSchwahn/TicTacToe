@@ -35,9 +35,9 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot#1]]
+![Game Board][product-screenshot#1]
 
-[![Product Name Screen Shot][product-screenshot#2]]
+![Winner][product-screenshot#2]
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
